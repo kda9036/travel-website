@@ -1,0 +1,708 @@
+/* Kelly Appleton, ISTE-240, 2205
+   Stylesheet for Individual Project: Travel Website 
+   5/4/2021
+*/
+
+/* Desktop styles */
+
+body {
+    background-color: aliceblue;
+    color: darkblue;
+    margin: 0px;
+    padding: 0px;
+    max-width: 1400px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    position: relative;
+}
+
+/* Header */
+
+.logo img {
+    width: 13%;
+    height: auto;
+    max-width: 125px;
+    float: left;
+    margin: 10px;
+}
+
+/* Navigation */
+
+nav {
+    position: absolute;
+    top: 30px;
+    background-color: rgb(46,139,87,1);
+    width: 100%;
+    max-width: 1255px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    margin-right: auto;
+}
+
+nav > ul {
+    margin-left: 5%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+nav li li a {
+    display: block;
+    font-weight: normal;
+    color: seagreen;
+    text-shadow: none;
+}
+
+nav li {
+    display: inline-block;
+    text-align: center;
+    padding: 12px;
+}
+
+nav li li {
+    display: block;
+    float: none;
+    background-color: white;
+}
+
+nav li ul{
+    display: none;
+    position: absolute;
+    top: 50px;
+    border: solid 1px darkblue;
+}
+
+/* Hamburger button */
+
+#ham-button {
+    display: none;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    transform: scale(1.5);
+    z-index: 5;
+    color: white;
+    background-color: darkblue;    
+}
+
+#ham-button:hover {
+    background-color: seagreen;
+}
+
+#ham-button:active {
+    color: darkblue;
+}
+
+/* Hover effects and Pseudo-classes */
+
+p a:link {
+    color: seagreen;
+}
+
+p a:visited {
+    color: darkblue;
+}
+
+p a:hover {
+    font-size: 1.1em;
+}
+
+p a:active {
+    color: red;
+}
+
+nav ul li.main-menu:hover {
+    background: darkblue;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:active {
+    font-style: italic;
+}
+
+nav li:hover ul {
+    display: block;
+    position: absolute;
+    z-index: 2;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+nav li li a:hover {
+    padding: 0.2em 5px;
+    border: 5px solid darkblue;
+    border-width: 0 5px;
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: darkblue;
+    text-decoration-style: wavy;
+    /* may add in future, but won't validate currently */
+    /* text-underline-offset: 5px; */
+    /* text-decoration-thickness: 2px; */
+}
+
+.sticky {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    z-index: 2;
+}
+
+.sticky + .form {
+  padding-top: 80px;
+}
+
+/* Hero Image */
+
+.hero-header {
+    position: relative;
+    z-index: -1;
+}
+
+.hero-img {
+    height: 400px;
+    width: 100%;
+    opacity: 0.5;
+    position: relative;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    text-shadow: 2px 2px 4px #ffffff;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes grow { from { width:0px; } to { width:40px; } }
+@-moz-keyframes grow { from { width:0px; } to { width:40px; } }
+@keyframes grow { from { width:0px; } to { width:40px; } }
+
+#heart {
+    position: relative;
+    top: 10px;
+    width:0px;  /* make heart image invisible/width 0px upon start */
+    -webkit-animation: grow ease-in 1;  /* call keyframe named grow, use animation ease-in and repeat it only 1 time */
+    -moz-animation: grow ease-in 1;
+    animation: grow ease-in 1;
+
+    -webkit-animation-duration:2s;
+    -moz-animation-duration:2s;
+    animation-duration:2s;
+
+    -webkit-animation-delay: 0.7s;
+    -moz-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+
+    /* this makes sure that after animation is done the image remains at the last keyframe value (width: 40px)*/
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+
+/* Content */
+
+main {
+    position: relative;
+}
+
+/* Maps */
+
+figure {
+    width: 60%;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    text-indent: 0;
+    margin: 1% auto;
+}
+
+img.scaled {
+    max-width: 100%;
+}
+
+/* Static map image from Project 1/Midterm */
+/* #abay-map {
+    border: 5px ridge red;
+} */
+
+/* Google Map */
+#map {
+    width: 90%;
+    height: 450px;
+    margin: 0 auto;
+    border: 5px ridge seagreen;
+}
+
+/* Homepage & Explore Images */
+
+.img-container {
+    position: relative;
+    display: inline-flex;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 1.2em;
+    width: 45%;
+    opacity: 0.7;
+	margin-top: 2%;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+
+.img-container a:link, .img-container a:visited {
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-container:hover {
+    opacity: 1.0;
+}
+
+.img-container:hover .centered {
+    background: rgb(0,0,0,.5);
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#boldt, #unclesam, #baydrivein, #tiwinery, #events, #dining {
+    max-width: 100%;
+    border: 5px ridge seagreen;
+}
+
+/* Countdown Timer on Events Page */
+
+#countdown-container {
+    border-width: 5px;
+    border-style:  ridge;
+    border-image: linear-gradient(90deg,red, white, darkblue) 1;
+    background: rgb(46,139,87,.1);
+    width: 50%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#countdownLabel, #countdown {
+    text-align: center;
+}
+
+#countdown {
+    text-shadow: 1px 1px white;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes colorChange { from { color: darkblue } to { color: red } }
+@-moz-keyframes colorChange { from { color: darkblue } to { color: red } }
+@keyframes colorChange { from { color: darkblue } to { color: red } }
+
+#countdownLabel {
+    color: darkblue;
+    -webkit-animation: colorChange linear infinite;
+    -moz-animation: colorChange linear infinite;
+    animation: colorChange linear infinite;
+
+    -webkit-animation-duration:2s;
+    -moz-animation-duration:2s;
+    animation-duration:2s;
+
+    -webkit-animation-delay: 0.7s;
+    -moz-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+#fireworks-container {
+	height: 500px;
+    display: none;
+	justify-content: center;
+	align-items: center;
+    position: relative;
+    background-color: black;
+    border: 5px solid darkblue;
+}
+.firework {
+	position: absolute;
+}
+.explosion {
+	position: absolute;
+	left: -2px;
+	bottom: 0;
+	width: 4px;
+	height: 80px;
+	transform-origin: 50% 100%;
+	overflow: hidden;
+}
+.explosion:nth-child(1) {
+	transform: rotate(0deg) translateY(-15px);
+}
+.explosion:nth-child(2) {
+	transform: rotate(30deg) translateY(-15px);
+}
+.explosion:nth-child(3) {
+	transform: rotate(60deg) translateY(-15px);
+}
+.explosion:nth-child(4) {
+	transform: rotate(90deg) translateY(-15px);
+}
+.explosion:nth-child(5) {
+	transform: rotate(120deg) translateY(-15px);
+}
+.explosion:nth-child(6) {
+	transform: rotate(150deg) translateY(-15px);
+}
+.explosion:nth-child(7) {
+	transform: rotate(180deg) translateY(-15px);
+}
+.explosion:nth-child(8) {
+	transform: rotate(210deg) translateY(-15px);
+}
+.explosion:nth-child(9) {
+	transform: rotate(240deg) translateY(-15px);
+}
+.explosion:nth-child(10) {
+	transform: rotate(270deg) translateY(-15px);
+}
+.explosion:nth-child(11) {
+	transform: rotate(300deg) translateY(-15px);
+}
+.explosion:nth-child(12) {
+	transform: rotate(330deg) translateY(-15px);
+}
+
+.explosion::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	height: 40px;
+	background-color: darkblue;
+}
+@keyframes explosion {
+	0% {
+		top: 100%;
+	}
+	33%, 100% {
+		top: -50%;
+	}
+}
+
+#firework1 {
+	left: 50%;
+	top: 50%;
+	transform: scale(1);
+}
+#firework1 .explosion::before {
+	animation: explosion 2s ease-in-out infinite;
+    background-color: red;
+}
+
+#firework2 {
+	left: 40%;
+	top: 45%;
+	transform: scale(.7);
+}
+#firework2 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+    background-color: white;
+}
+
+#firework3 {
+	left: 60%;
+	top: 65%;
+	transform: scale(.4);
+}
+#firework3 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+    background-color: darkblue;
+}
+
+/* Form */
+
+form {
+    width: 100%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+form > input {
+    margin: 10px;
+}
+
+fieldset {
+    width: 250px;
+    margin: auto;
+    text-align: left;
+    border: 2px solid seagreen;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 40px;
+    border-color: darkblue;
+} 
+
+input[type="date"] {
+    width: 130px;
+    border-color: darkblue;
+} 
+
+#rating {
+    margin-bottom: 30px;
+}
+
+#submit {
+    color: white;
+    background-color: darkblue;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#submit:hover {
+    background-color: seagreen;
+}
+
+#submit:active {
+    color: darkblue;
+}
+
+textarea {
+    width: 50%;
+    height: 50px;
+    border: 2px solid seagreen;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* References Table */
+
+table {
+    width:100%;
+}
+
+table, th, td {
+    border: 1px solid darkblue;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+#resources tr:nth-child(even) {
+    background-color: aliceblue;
+}
+
+#resources tr:nth-child(odd) {
+ background-color: rgb(46,139,87, 0.2);
+}
+
+#resources th {
+    background-color: darkblue;
+    color: white;
+}
+
+/* Other*/
+
+hr {
+    border: 1px solid seagreen;
+    width: 90%;
+}
+
+h1, h2 {
+    font-family: "Roboto Slab", serif;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Roboto Slab", serif;
+}
+
+.margin-left h3, .margin-left h4 {
+    margin-left: 3%;
+}
+
+p {
+    text-indent: 2%;
+    margin: 20px;
+}
+
+.float-left {
+    float: left;
+    width: 20%;
+    border: 5px ridge darkblue;
+    margin: 2%;
+    background-color: seagreen;
+}
+
+.float-right {
+    float: right;
+    width: 20%;
+    border: 5px ridge darkblue;
+    margin: 2%;
+}
+
+.margin-top {
+    margin-top: 5%;
+}
+
+#grading-page {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+    border: 5px ridge darkblue;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: darkblue;
+    margin: 10px;
+}
+
+/* Media Queries */
+
+/* Medium devices (landscape tablets, 885px and down) */
+@media screen and (max-width: 885px) {
+
+    .logo {
+        display: none;
+    }
+    
+    nav {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+        top: 0px;
+    }
+    
+    nav ul {
+        margin-left: auto;
+    }
+    
+    nav li {
+        font-size: 0.9em;
+    }
+    
+    nav li ul{
+        top: 48px;
+    }
+
+}
+
+/* Small devices (635px and down) */
+@media screen and (max-width: 635px) {
+    
+    /* Hamburger button */
+
+    #ham-button {
+        display: inline-block;
+    }
+    
+    /* Navbar */
+    
+    nav {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav li {
+        display: block;
+        font-size: 1em;
+    }
+    
+    nav li:hover ul {
+        display: none;
+    }
+    
+    .sticky {
+        position: relative;
+    }
+    
+    
+    /* Body */
+    
+    body {
+        font-size: 0.9em;
+    }
+    
+    /* Grading Page */   
+     
+    #grading-page {
+        display: block;
+    }
+    
+    /* Maps */
+    
+    figure {
+        width: 95%;
+    }
+
+    /* Homepage & Explore Images */
+    
+    .img-container {
+        font-size: 0.9em;
+        width: 95%;
+    }
+
+}
+
+/* IE - to fix internet explorer homepage and explore page layout issues */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* Homepage & Explore Images */
+
+    .img-container {
+        display: inline-block;
+    }
+}
