@@ -4,6 +4,8 @@ RIT Spring 2021
 
 Course: Web and Mobile Computing II
 
+See ProjectDemo > view raw for video demo of project
+
 # Project Description
 
 This project will be a "new and improved" version of your midterm project. Add to it the various
